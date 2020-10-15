@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e24fc9bfd9d1f442b773a44f1ad6042, type: 3}
+  m_Name: PlayerScriptableObject
+  m_EditorClassIdentifier: 
+  movementSpeed: 5
+  bombDropRate: 3
+  playerView: {fileID: 7410661962370772614, guid: 96a5b3d2b0d5ea14c945ac5902fb9bdc,
+    type: 3}

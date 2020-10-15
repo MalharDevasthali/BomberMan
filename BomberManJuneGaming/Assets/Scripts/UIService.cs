@@ -17,10 +17,6 @@ public class UIService : MonoBehaviour
         }
     }
 
-    private void Start()
-    {
-        DontDestroyOnLoad(this.gameObject);
-    }
 
     public void StartTheGame()
     {
