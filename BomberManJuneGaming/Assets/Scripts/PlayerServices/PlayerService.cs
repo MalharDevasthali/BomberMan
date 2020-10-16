@@ -32,4 +32,5 @@ public class PlayerService : MonoBehaviour
         model = new PlayerModel(playerScriptableObject);
         controller = new PlayerController(playerScriptableObject.playerView, model);
     }
+
 }

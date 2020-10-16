@@ -42,6 +42,10 @@ public class PlayerController
         else
             view.GetRigidBody().velocity = Vector2.zero;
     }
-
+    public void PlayerDied()
+    {
+        GameObject.Destroy(view.gameObject);
+        UIService.instance.ShowGameOverScreen();
+    }
 
 }

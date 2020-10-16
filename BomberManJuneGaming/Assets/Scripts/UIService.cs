@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 public class UIService : MonoBehaviour
 {
     public static UIService instance;
+    public GameObject GameOverPanel;
     private void Awake()
     {
         if (instance != null)
@@ -16,6 +17,11 @@ public class UIService : MonoBehaviour
             instance = this;
         }
     }
+    public void RestartTheGame()
+    {
+        GameOverPanel.SetActive(false);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
 
 
     public void StartTheGame()
@@ -25,5 +31,9 @@ public class UIService : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
+    }
+    public void ShowGameOverScreen()
+    {
+        GameOverPanel.SetActive(true);
     }
 }

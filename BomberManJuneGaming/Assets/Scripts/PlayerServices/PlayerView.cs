@@ -26,5 +26,12 @@ public class PlayerView : MonoBehaviour
     {
         return rigidbody;
     }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Bomb"))
+        {
+            controller.PlayerDied();
+        }
+    }
 
 }

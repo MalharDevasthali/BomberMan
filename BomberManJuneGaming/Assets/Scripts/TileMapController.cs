@@ -96,7 +96,8 @@ public class TileMapController : MonoBehaviour
 
     private bool isTileOnPlayer(Vector3Int tilePos)
     {
-        if (tilePos == PlayerService.instace.GetPlayerController().GetPlayerView().spawnPoint.localPosition)
+
+        if (tilePos.x - minXMaxY.position.x <= Mathf.Abs(0.25f))
         {
             return true;
         }
