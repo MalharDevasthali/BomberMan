@@ -19,7 +19,10 @@ public class PlayerService : MonoBehaviour
             instace = this;
         }
     }
-
+    public PlayerController GetPlayerController()
+    {
+        return controller;
+    }
     void Start()
     {
         CreatePlayer();

@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using UnityEngine.Tilemaps;
 using UnityEngine;
 
 public class PlayerView : MonoBehaviour
@@ -15,7 +14,9 @@ public class PlayerView : MonoBehaviour
     }
     private void Update()
     {
+
         controller.Movement();
+
     }
     public void SetController(PlayerController _controller)
     {

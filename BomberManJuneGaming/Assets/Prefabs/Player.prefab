@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 400307462620726705}
   - component: {fileID: 400307462620726706}
   - component: {fileID: 7410661962370772614}
-  - component: {fileID: 5543343236603474579}
+  - component: {fileID: 1277307328389255172}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -119,8 +119,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 3155428654496125965}
---- !u!70 &5543343236603474579
-CapsuleCollider2D:
+--- !u!58 &1277307328389255172
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -132,9 +132,9 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.008616582, y: 0}
-  m_Size: {x: 0.43596765, y: 0.92}
-  m_Direction: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.46
 --- !u!1 &1129409897041990271
 GameObject:
   m_ObjectHideFlags: 0

@@ -16,3 +16,5 @@ MonoBehaviour:
   bombDropRate: 3
   playerView: {fileID: 7410661962370772614, guid: 96a5b3d2b0d5ea14c945ac5902fb9bdc,
     type: 3}
+  groundTileMap: {fileID: 8558158922508718653, guid: 0b258953e530cea44a9ef3a0738953cf,
+    type: 3}
