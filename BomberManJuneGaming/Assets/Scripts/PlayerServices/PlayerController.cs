@@ -26,22 +26,18 @@ public class PlayerController
         if (HorizontalMovement > 0)
         {
             view.GetRigidBody().velocity = new Vector2(model.movementSpeed, 0);
-            Debug.Log("Moving Right");
         }
         else if (HorizontalMovement < 0)
         {
             view.GetRigidBody().velocity = new Vector2(-model.movementSpeed, 0);
-            Debug.Log("Moving Left");
         }
         else if (VerticalMovement > 0)
         {
             view.GetRigidBody().velocity = new Vector2(0f, model.movementSpeed);
-            Debug.Log("Up");
         }
         else if (VerticalMovement < 0)
         {
             view.GetRigidBody().velocity = new Vector2(0f, -model.movementSpeed);
-            Debug.Log("Down");
         }
         else
             view.GetRigidBody().velocity = Vector2.zero;

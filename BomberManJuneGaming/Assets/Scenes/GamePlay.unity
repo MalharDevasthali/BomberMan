@@ -174,7 +174,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 6.45
+  orthographic size: 6.4
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -317,7 +317,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   groundTilemap: {fileID: 5605844607605175096}
-  bomb: {fileID: 7406068501749812701, guid: 33b17cb0d92b8ad4aab3811e44c07328, type: 3}
+  bomb: {fileID: 4420781591515163415, guid: 33b17cb0d92b8ad4aab3811e44c07328, type: 3}
+  canPlaceBomb: 1
 --- !u!1839735485 &5605844607605175096 stripped
 Tilemap:
   m_CorrespondingSourceObject: {fileID: 2245572215641779013, guid: b0983e14845b93e4fa6d636286bb48e5,

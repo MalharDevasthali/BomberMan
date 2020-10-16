@@ -1,5 +1,97 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &320502746
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 320502747}
+  m_Layer: 0
+  m_Name: Bounds
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &320502747
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 320502746}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1116273743}
+  - {fileID: 1439046242}
+  m_Father: {fileID: 2245572215766239069}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1116273742
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1116273743}
+  m_Layer: 0
+  m_Name: MinXMaxY
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1116273743
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1116273742}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -8.49, y: 5.36, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 320502747}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1439046241
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1439046242}
+  m_Layer: 0
+  m_Name: MaxXMinY
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1439046242
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1439046241}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 7.38, y: -6.49, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 320502747}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2245572215766239071
 GameObject:
   m_ObjectHideFlags: 0
@@ -10,6 +102,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2245572215766239069}
   - component: {fileID: 2245572215766239070}
+  - component: {fileID: 442095573375223340}
   m_Layer: 0
   m_Name: TileMaps
   m_TagString: Untagged
@@ -30,6 +123,7 @@ Transform:
   m_Children:
   - {fileID: 2245572214532331599}
   - {fileID: 2245572215641779015}
+  - {fileID: 320502747}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -45,6 +139,25 @@ Grid:
   m_CellGap: {x: 0, y: 0, z: 0}
   m_CellLayout: 0
   m_CellSwizzle: 0
+--- !u!114 &442095573375223340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2245572215766239071}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 446661b429798fb48859ade515d35752, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameplayTileMap: {fileID: 2245572215641779013}
+  wallTile: {fileID: 11400000, guid: 568e698337b88b54f8c94710d4d2e92e, type: 2}
+  destructableTile: {fileID: 11400000, guid: 3d01ea6129a394a41a9336b58e2a2fb4, type: 2}
+  ExplosionPrefab: {fileID: 3918523785571273879, guid: 3d80b695a011cb94fae6c3cc50265f2b,
+    type: 3}
+  minXMaxY: {fileID: 1116273743}
+  maxXMinY: {fileID: 1439046242}
 --- !u!1001 &631882872149238234
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -117,6 +230,12 @@ PrefabInstance:
 --- !u!4 &2245572215641779015 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1724040930367589021, guid: 3f37c61784a710547bf6a159ecf9012e,
+    type: 3}
+  m_PrefabInstance: {fileID: 631882872149238234}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1839735485 &2245572215641779013 stripped
+Tilemap:
+  m_CorrespondingSourceObject: {fileID: 1724040930367589023, guid: 3f37c61784a710547bf6a159ecf9012e,
     type: 3}
   m_PrefabInstance: {fileID: 631882872149238234}
   m_PrefabAsset: {fileID: 0}

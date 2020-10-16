@@ -9,7 +9,6 @@ public class PlayerScriptableObject : ScriptableObject
 
 
     public float movementSpeed;
-    public float bombDropRate;
     public PlayerView playerView;
-    //public Tilemap groundTileMap;
+
 }
