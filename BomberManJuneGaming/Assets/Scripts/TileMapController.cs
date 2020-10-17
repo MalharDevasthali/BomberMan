@@ -10,7 +10,8 @@ public class TileMapController : MonoBehaviour
     public Tilemap gameplayTileMap;
     public Tile wallTile;
     public Tile destructableTile;
-    public GameObject ExplosionPrefab;
+    [SerializeField] private GameObject ExplosionPrefab;
+    [SerializeField] private EnemyController enemyController;
     [SerializeField] private Transform minXMaxY;
     [SerializeField] private Transform maxXMinY;
 
@@ -25,11 +26,12 @@ public class TileMapController : MonoBehaviour
             instance = this;
         }
     }
-    private async void Start()
+    private void Start()
     {
-        await Task.Delay(500);
+
         GenerateRandomWalls();
         GenerateRandomDestructiveWalls();
+        GenerateRandomEnemies();
     }
     public void Explode(Vector2 positionToExplode)
     {
@@ -70,13 +72,15 @@ public class TileMapController : MonoBehaviour
         int minY = (int)maxXMinY.localPosition.y;
         int maxY = (int)minXMaxY.localPosition.y;
 
-        for (int i = 0; i < Random.Range(10, 15); i++)
+        for (int i = 0; i < 20; i++)
         {
             Vector3Int randomPosition = new Vector3Int(Random.Range(minX, maxX), Random.Range(minY, maxY), 0);
-            if (!isTileOnPlayer(randomPosition))
-                gameplayTileMap.SetTile(randomPosition, wallTile);
-        }
 
+            if (!gameplayTileMap.HasTile(randomPosition))
+                gameplayTileMap.SetTile(randomPosition, wallTile);
+            else
+                i--;
+        }
     }
     private void GenerateRandomDestructiveWalls()
     {
@@ -86,23 +90,38 @@ public class TileMapController : MonoBehaviour
         int minY = (int)maxXMinY.localPosition.y;
         int maxY = (int)minXMaxY.localPosition.y;
 
-        for (int i = 0; i < Random.Range(10, 15); i++)
+        for (int i = 0; i < 15; i++)
         {
             Vector3Int randomPosition = new Vector3Int(Random.Range(minX, maxX), Random.Range(minY, maxY), 0);
-            if (!isTileOnPlayer(randomPosition))
+            if (!gameplayTileMap.HasTile(randomPosition))
                 gameplayTileMap.SetTile(randomPosition, destructableTile);
+            else
+                i--;
         }
     }
-
-    private bool isTileOnPlayer(Vector3Int tilePos)
+    private void GenerateRandomEnemies()
     {
+        int minX = (int)minXMaxY.localPosition.x;
+        int maxX = (int)maxXMinY.localPosition.x;
 
-        if (tilePos.x - minXMaxY.position.x <= Mathf.Abs(0.25f))
+        int minY = (int)maxXMinY.localPosition.y;
+        int maxY = (int)minXMaxY.localPosition.y;
+
+        for (int i = 0; i < 5; i++)
         {
-            return true;
+            Vector3Int randomPosition = new Vector3Int(Random.Range(minX, maxX), Random.Range(minY, maxY), 0);
+
+            if (!gameplayTileMap.HasTile(randomPosition))
+            {
+                //SpawnEnemy
+                Vector3 spwanPos = gameplayTileMap.GetCellCenterLocal(randomPosition);
+                Instantiate(enemyController.gameObject, spwanPos, Quaternion.identity);
+            }
+            else
+            {
+                i--;
+            }
         }
-        else
-            return false;
     }
 
     private bool ExplodeCell(Vector3Int cell)

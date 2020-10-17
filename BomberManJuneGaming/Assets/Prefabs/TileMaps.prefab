@@ -56,7 +56,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1116273742}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.49, y: 5.36, z: 0}
+  m_LocalPosition: {x: -7.55, y: 4.36, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 320502747}
@@ -86,7 +86,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1439046241}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.38, y: -6.49, z: 0}
+  m_LocalPosition: {x: 6.44, y: -5.61, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 320502747}
@@ -155,6 +155,8 @@ MonoBehaviour:
   wallTile: {fileID: 11400000, guid: 568e698337b88b54f8c94710d4d2e92e, type: 2}
   destructableTile: {fileID: 11400000, guid: 3d01ea6129a394a41a9336b58e2a2fb4, type: 2}
   ExplosionPrefab: {fileID: 3918523785571273879, guid: 3d80b695a011cb94fae6c3cc50265f2b,
+    type: 3}
+  enemyController: {fileID: 5089150095329127616, guid: 9dc0ab93ac8dab84d82d13a953c8747a,
     type: 3}
   minXMaxY: {fileID: 1116273743}
   maxXMinY: {fileID: 1439046242}

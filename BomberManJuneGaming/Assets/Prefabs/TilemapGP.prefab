@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1724040930367589022}
   - component: {fileID: 1724040930367589008}
   - component: {fileID: 1724040930367589009}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: TilemapGP
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
