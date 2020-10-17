@@ -33,5 +33,12 @@ public class PlayerView : MonoBehaviour
             controller.PlayerDied();
         }
     }
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.GetComponent<EnemyController>() != null)
+        {
+            //controller.PlayerDied();
+        }
+    }
 
 }

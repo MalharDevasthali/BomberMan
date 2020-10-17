@@ -2,10 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 public class UIService : MonoBehaviour
 {
     public static UIService instance;
     public GameObject GameOverPanel;
+    public GameObject YouWinPanel;
+    public TextMeshProUGUI scoreText;
+    private static int Score;
+
     private void Awake()
     {
         if (instance != null)
@@ -17,10 +22,22 @@ public class UIService : MonoBehaviour
             instance = this;
         }
     }
+    private void Start()
+    {
+        Score = 0;
+        scoreText.text = "Score: " + Score.ToString();
+    }
     public void RestartTheGame()
     {
-        GameOverPanel.SetActive(false);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+    public void LoadNextRound()
+    {
+        YouWinPanel.SetActive(false);
+        GameOverPanel.SetActive(false);
+        PlayerService.instace.GetPlayerController().PlayerDied(false);
+        PlayerService.instace.CreatePlayer();
+        TileMapController.instance.LoadLevel();
     }
 
 
@@ -35,5 +52,15 @@ public class UIService : MonoBehaviour
     public void ShowGameOverScreen()
     {
         GameOverPanel.SetActive(true);
+    }
+    public void ShowWinScreen()
+    {
+        if (YouWinPanel)
+            YouWinPanel.SetActive(true);
+    }
+    public void UpdateScore()
+    {
+        Score += 10;
+        scoreText.text = "Score: " + Score.ToString();
     }
 }

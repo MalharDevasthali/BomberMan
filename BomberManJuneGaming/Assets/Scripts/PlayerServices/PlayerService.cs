@@ -27,7 +27,7 @@ public class PlayerService : MonoBehaviour
     {
         CreatePlayer();
     }
-    private void CreatePlayer()
+    public void CreatePlayer()
     {
         model = new PlayerModel(playerScriptableObject);
         controller = new PlayerController(playerScriptableObject.playerView, model);

@@ -154,6 +154,7 @@ MonoBehaviour:
   gameplayTileMap: {fileID: 2245572215641779013}
   wallTile: {fileID: 11400000, guid: 568e698337b88b54f8c94710d4d2e92e, type: 2}
   destructableTile: {fileID: 11400000, guid: 3d01ea6129a394a41a9336b58e2a2fb4, type: 2}
+  boundaryTile: {fileID: 11400000, guid: 7f2cdcca3a84bf04394b4e768c5cbd5e, type: 2}
   ExplosionPrefab: {fileID: 3918523785571273879, guid: 3d80b695a011cb94fae6c3cc50265f2b,
     type: 3}
   enemyController: {fileID: 5089150095329127616, guid: 9dc0ab93ac8dab84d82d13a953c8747a,

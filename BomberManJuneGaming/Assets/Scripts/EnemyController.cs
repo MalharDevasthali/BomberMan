@@ -17,9 +17,11 @@ public class EnemyController : MonoBehaviour
     private Rigidbody2D rb2d;
     private float currentTime = 0;
     private float changeDirectionTimer = 3f;
+    private static int enemiesDied = 0;
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
+        enemiesDied = 0;
 
     }
 
@@ -111,6 +113,23 @@ public class EnemyController : MonoBehaviour
         else
         {
             rb2d.velocity = new Vector2(0f, -movementSpeed);
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Bomb"))
+        {
+            Destroy(gameObject);
+        }
+    }
+    private void OnDestroy()
+    {
+        enemiesDied++;
+        UIService.instance.UpdateScore();
+        Debug.Log("Eenmies Died" + enemiesDied);
+        if (enemiesDied == 2)
+        {
+            UIService.instance.ShowWinScreen();
         }
     }
 

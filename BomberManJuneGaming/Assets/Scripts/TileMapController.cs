@@ -10,6 +10,7 @@ public class TileMapController : MonoBehaviour
     public Tilemap gameplayTileMap;
     public Tile wallTile;
     public Tile destructableTile;
+    public Tile boundaryTile;
     [SerializeField] private GameObject ExplosionPrefab;
     [SerializeField] private EnemyController enemyController;
     [SerializeField] private Transform minXMaxY;
@@ -28,7 +29,12 @@ public class TileMapController : MonoBehaviour
     }
     private void Start()
     {
-
+        LoadLevel();
+    }
+    public void LoadLevel()
+    {
+        gameplayTileMap.ClearAllTiles();
+        GenerateBoundaries();
         GenerateRandomWalls();
         GenerateRandomDestructiveWalls();
         GenerateRandomEnemies();
@@ -63,6 +69,40 @@ public class TileMapController : MonoBehaviour
                 ExplodeCell(originalCell + new Vector3Int(0, -i, 0));
             else break;
         }
+    }
+    private void GenerateBoundaries()
+    {
+        Vector3 _minXMaxY = minXMaxY.position + new Vector3(-1, +1, 1);
+        Vector3 _maxXminY = maxXMinY.position + new Vector3(+1, -1, 1);
+
+        for (int i = (int)Mathf.Round(_minXMaxY.x) - 1; i <= Mathf.Round(_maxXminY.x); i++)
+        {
+            Vector3 tilepos = gameplayTileMap.GetCellCenterLocal(new Vector3Int(i, (int)Mathf.Round(_minXMaxY.y), 0));
+
+            gameplayTileMap.SetTile(new Vector3Int((int)tilepos.x, (int)tilepos.y, 0), boundaryTile);
+        }
+        for (int i = (int)Mathf.Round(_minXMaxY.x); i <= Mathf.Round(_maxXminY.x); i++)
+        {
+            Vector3 tilepos = gameplayTileMap.GetCellCenterLocal(new Vector3Int(i, (int)Mathf.Round(_maxXminY.y) - 1, 0));
+
+            gameplayTileMap.SetTile(new Vector3Int((int)tilepos.x, (int)tilepos.y, 0), boundaryTile);
+        }
+
+
+
+        for (int i = (int)Mathf.Round(_minXMaxY.y); i >= Mathf.Round(_maxXminY.y) - 1; i--)
+        {
+            Vector3 tilepos = gameplayTileMap.GetCellCenterLocal(new Vector3Int((int)Mathf.Round(_minXMaxY.x) - 1, i, 0));
+
+            gameplayTileMap.SetTile(new Vector3Int((int)tilepos.x, (int)tilepos.y, 0), boundaryTile);
+        }
+        for (int i = (int)Mathf.Round(_minXMaxY.y); i >= Mathf.Round(_maxXminY.y) - 1; i--)
+        {
+            Vector3 tilepos = gameplayTileMap.GetCellCenterLocal(new Vector3Int((int)Mathf.Round(_maxXminY.x), i, 0));
+
+            gameplayTileMap.SetTile(new Vector3Int((int)tilepos.x, (int)tilepos.y, 0), boundaryTile);
+        }
+
     }
     private void GenerateRandomWalls()
     {
