@@ -167,7 +167,7 @@ public class TileMapController : MonoBehaviour
     private bool ExplodeCell(Vector3Int cell)
     {
         Tile tile = gameplayTileMap.GetTile<Tile>(cell);
-        if (tile == wallTile)
+        if (tile == wallTile || tile == boundaryTile)
         {
             return false;
         }

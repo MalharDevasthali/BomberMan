@@ -37,7 +37,7 @@ public class PlayerView : MonoBehaviour
     {
         if (other.gameObject.GetComponent<EnemyController>() != null)
         {
-            //controller.PlayerDied();
+            controller.PlayerDied();
         }
     }
 

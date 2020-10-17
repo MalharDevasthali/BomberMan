@@ -127,7 +127,7 @@ public class EnemyController : MonoBehaviour
         enemiesDied++;
         UIService.instance.UpdateScore();
         Debug.Log("Eenmies Died" + enemiesDied);
-        if (enemiesDied == 2)
+        if (enemiesDied == 5)
         {
             UIService.instance.ShowWinScreen();
         }

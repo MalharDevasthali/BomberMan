@@ -9,6 +9,7 @@ public class UIService : MonoBehaviour
     public GameObject GameOverPanel;
     public GameObject YouWinPanel;
     public TextMeshProUGUI scoreText;
+    public TextMeshProUGUI finalScoreText;
     private static int Score;
 
     private void Awake()
@@ -52,6 +53,8 @@ public class UIService : MonoBehaviour
     public void ShowGameOverScreen()
     {
         GameOverPanel.SetActive(true);
+        scoreText.gameObject.SetActive(false);
+        finalScoreText.text = "Your Final Score is: " + Score.ToString();
     }
     public void ShowWinScreen()
     {
