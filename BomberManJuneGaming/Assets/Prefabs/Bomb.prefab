@@ -96,7 +96,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bombBlastTimer: 3
-  bombStrength: 3
+  bombStrength: 2
   boxCollider2D: {fileID: 4592395348535276640}
 --- !u!61 &4592395348535276640
 BoxCollider2D:
