@@ -6,6 +6,10 @@ public class PlayerView : MonoBehaviour
     public Transform spawnPoint;
     private Rigidbody2D rigidbody;
     private PlayerController controller;
+    private bool Damagable = false;
+    private float notDamagableTime = 1f;
+    private float currentTime = 0;
+
 
     private void Start()
     {
@@ -15,6 +19,15 @@ public class PlayerView : MonoBehaviour
     private void Update()
     {
 
+        if (currentTime > notDamagableTime && !Damagable)
+        {
+            currentTime = 0;
+            Damagable = true;
+        }
+        else
+        {
+            currentTime += Time.deltaTime;
+        }
         controller.Movement();
 
     }
@@ -35,7 +48,7 @@ public class PlayerView : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.GetComponent<EnemyController>() != null)
+        if (other.gameObject.GetComponent<EnemyController>() != null && Damagable)
         {
             controller.PlayerDied();
         }

@@ -31,9 +31,7 @@ public class EnemyController : MonoBehaviour
         if (currentTime < Time.time)
         {
             currentTime = changeDirectionTimer + Time.time;
-
             currentMovement = (Movement)Random.Range(0, 4);
-            Debug.Log("Each 2 secs");
         }
 
         switch (currentMovement)
@@ -126,7 +124,6 @@ public class EnemyController : MonoBehaviour
     {
         enemiesDied++;
         UIService.instance.UpdateScore();
-        Debug.Log("Eenmies Died" + enemiesDied);
         if (enemiesDied == 5)
         {
             UIService.instance.ShowWinScreen();
