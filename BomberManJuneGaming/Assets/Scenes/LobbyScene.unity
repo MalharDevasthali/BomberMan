@@ -443,7 +443,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 8053403368702360335, guid: fde5f60293348894ab43ea2f0d8c0c13,
+          type: 3}
         m_MethodName: QuitGame
         m_Mode: 1
         m_Arguments:
